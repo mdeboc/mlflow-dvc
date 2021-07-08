@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  mlflow:
+    build:
+      context: .
+    ports:
+      - 5000:5000
+    working_dir: /work
+    command: poetry run mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root artifacts/ --host 0.0.0.0 --port 5000
+    volumes:
+      - ".:/work"

@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+help_services() {
+    echo 'you must provide a docker compose service to run bash within'
+    echo 'possible values :'
+    echo '------------------------------------'
+    make services
+    echo '------------------------------------'
+}
+
+if [ $# -eq 0 ]; then
+    help_services
+    exit
+else
+    container=$1
+    shift 1
+fi
+
+echo running bash in $container container service
+docker-compose run --rm $container bash
