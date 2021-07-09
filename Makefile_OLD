@@ -1,0 +1,11 @@
+IMAGE_NAME=mdeboc/mlflow:latest
+
+install: ## First time: Build image, and install all the dependencies, including jupyter
+	docker build -f Dockerfile -t ${IMAGE_NAME} .  # --no-cache
+	docker run --rm -v $(pwd):/work -w /work --entrypoint bash -lc ${IMAGE_NAME} -c 'poetry install'
+	sudo chmod -R 777 .cache
+.PHONY: install
+
+start: ## To get inside the container (can launch "poetry shell" from inside or "poetry add <package>")
+	docker run --rm -v $(pwd):/work -w /work --entrypoint bash -lc ${IMAGE_NAME} -c 'poetry run mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root artifacts/ --host 0.0.0.0 --port 5000'
+.PHONY: start
