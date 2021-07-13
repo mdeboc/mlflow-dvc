@@ -23,3 +23,9 @@ stages:
     - train.alpha
     outs:
     - models/model.pkl
+  log_production_model:
+    cmd: python src/log_production_model.py --config=params.yaml
+    deps:
+    - src/log_production_model.py
+    outs:
+    - prediction_service/model/model.joblib

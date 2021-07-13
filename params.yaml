@@ -4,7 +4,7 @@ prepare:
         - rec.sport.baseball
     data_preprocessed: data/features
 train:
-    alpha: 0.9
+    alpha: 15
     outputed_model: models/model.pkl
 mlflow_config:
   artifacts_dir: artifacts
@@ -12,3 +12,4 @@ mlflow_config:
   run_name: mlops
   registered_model_name: MultinomialNB
   remote_server_uri: http://mlflow:5000
+webapp_model_dir: prediction_service/model/model.joblib
