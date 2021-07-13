@@ -2,5 +2,13 @@ prepare:
     categories:
         - comp.graphics
         - rec.sport.baseball
+    data_preprocessed: data/features
 train:
     alpha: 0.9
+    outputed_model: models/model.pkl
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: Naive_B
+  run_name: mlops
+  registered_model_name: MultinomialNB
+  remote_server_uri: http://mlflow:5000

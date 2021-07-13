@@ -1,1 +1,5 @@
 /model.pkl
+mlflow.db
+artifacts/
+poetry.lock
+.idea
