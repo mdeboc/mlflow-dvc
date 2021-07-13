@@ -31,3 +31,20 @@ stages:
       md5: e755e7d5e6de19e585c19bc7ab1c64c4.dir
       size: 418297906
       nfiles: 2
+  train:
+    cmd: python3 src/train.py data/features model.pkl
+    deps:
+    - path: data/features
+      md5: e755e7d5e6de19e585c19bc7ab1c64c4.dir
+      size: 418297906
+      nfiles: 2
+    - path: src/train.py
+      md5: 4e2d26dcdf7e68de9b6c639ef4a15086
+      size: 829
+    params:
+      params.yaml:
+        train.alpha: 0.9
+    outs:
+    - path: model.pkl
+      md5: b4837a0fe7b23a2e53660c637a8c4574
+      size: 850957
