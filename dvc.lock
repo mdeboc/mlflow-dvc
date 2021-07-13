@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: src/prepare.py
+      md5: 8bb700480c47eef497a6e693bdd102ab
+      size: 980
+    params:
+      params.yaml:
+        prepare.categories:
+        - comp.graphics
+        - rec.sport.baseball
+    outs:
+    - path: data/prepared
+      md5: 77cdc4b415254bc15c5d109816504915.dir
+      size: 3277682
+      nfiles: 2
