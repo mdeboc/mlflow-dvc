@@ -34,3 +34,9 @@ dvc remote modify myremote secret_access_key AWS_SECRET_ACCESS_KEY
 ```bash
 dvc run -n prepare -p prepare.categories -d src/prepare.py -o data/prepared python src/prepare.py
 ```
+
+```bash
+# featurize
+vim dvc.yaml
+dvc repro
+```

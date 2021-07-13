@@ -7,3 +7,10 @@ stages:
     - prepare.categories
     outs:
     - data/prepared
+  featurize:
+    cmd: python3 src/featurize.py data/prepared data/features
+    deps:
+    - data/prepared
+    - src/featurize.py
+    outs:
+    - data/features
