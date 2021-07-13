@@ -4,8 +4,8 @@ stages:
     cmd: python src/prepare.py
     deps:
     - path: src/prepare.py
-      md5: 8bb700480c47eef497a6e693bdd102ab
-      size: 980
+      md5: 09f2b6bc6e5541459817834d41baabe3
+      size: 986
     params:
       params.yaml:
         prepare.categories:
@@ -24,8 +24,8 @@ stages:
       size: 3277682
       nfiles: 2
     - path: src/featurize.py
-      md5: 20fea8cdee321d4078e42451352a7222
-      size: 1685
+      md5: 9ed284bea6b836cd92e87352e0acb6fb
+      size: 1674
     outs:
     - path: data/features
       md5: e755e7d5e6de19e585c19bc7ab1c64c4.dir
@@ -39,8 +39,8 @@ stages:
       size: 418297906
       nfiles: 2
     - path: src/train.py
-      md5: 4e2d26dcdf7e68de9b6c639ef4a15086
-      size: 829
+      md5: 300179431595dd8b40da1c98528faf3b
+      size: 818
     params:
       params.yaml:
         train.alpha: 0.9
@@ -59,8 +59,8 @@ stages:
       md5: b4837a0fe7b23a2e53660c637a8c4574
       size: 850957
     - path: src/evaluate.py
-      md5: 54491159e4bd1bf0e79321bb9e63cc84
-      size: 1346
+      md5: d663afabb4aeb9d778ce8bece36cacdc
+      size: 1360
     outs:
     - path: plots.json
       md5: 9e68566640606aff48965dcb592341d9
