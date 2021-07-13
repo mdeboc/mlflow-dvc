@@ -39,15 +39,15 @@ stages:
       size: 418297906
       nfiles: 2
     - path: src/train.py
-      md5: 32c1584d2fda36a62800029f391f552f
-      size: 3136
+      md5: 5e6611d21ecbb4a3ee8552776b376488
+      size: 2916
     params:
       params.yaml:
-        train.alpha: 0.9
+        train.alpha: 15
     outs:
     - path: models/model.pkl
-      md5: b4837a0fe7b23a2e53660c637a8c4574
-      size: 850957
+      md5: e82efc782200ca2b9c8b2b061fe4c1e3
+      size: 850950
   evaluate:
     cmd: python3 src/evaluate.py model.pkl data/features scores.json plots.json
     deps:
@@ -68,3 +68,13 @@ stages:
     - path: scores.json
       md5: f191dca3b0ab75f394f07ac8b31f3ccc
       size: 27
+  log_production_model:
+    cmd: python src/log_production_model.py --config=params.yaml
+    deps:
+    - path: src/log_production_model.py
+      md5: 7c85b21a0310d54933742db6f44b6d76
+      size: 1874
+    outs:
+    - path: prediction_service/model/model.joblib
+      md5: 68f14d8669b564cde5cc4228ae4761b9
+      size: 851618
