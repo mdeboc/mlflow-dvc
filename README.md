@@ -46,3 +46,9 @@ dvc repro
 vim dvc.yaml
 dvc repro
 ```
+
+```bash
+# evaluate
+vim dvc.yaml
+dvc repro
+```
