@@ -30,3 +30,7 @@ dvc remote add -d myremote s3://mlflowtestmatt
 dvc remote modify myremote access_key_id AWS_ACCESS_KEY_ID
 dvc remote modify myremote secret_access_key AWS_SECRET_ACCESS_KEY
 ```
+
+```bash
+dvc run -n prepare -p prepare.categories -d src/prepare.py -o data/prepared python src/prepare.py
+```
