@@ -40,3 +40,9 @@ dvc run -n prepare -p prepare.categories -d src/prepare.py -o data/prepared pyth
 vim dvc.yaml
 dvc repro
 ```
+
+```bash
+# train
+vim dvc.yaml
+dvc repro
+```
