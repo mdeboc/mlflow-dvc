@@ -52,3 +52,7 @@ dvc repro
 vim dvc.yaml
 dvc repro
 ```
+
+```bash
+dvc push
+```
