@@ -11,5 +11,5 @@ mlflow_config:
   experiment_name: Naive_B
   run_name: mlops
   registered_model_name: MultinomialNB
-  remote_server_uri: http://mlflow:5000
+  remote_server_uri: http://mlflow:1234
 webapp_model_dir: prediction_service/model/model.joblib
