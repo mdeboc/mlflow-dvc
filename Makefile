@@ -14,6 +14,7 @@ fixtures: ## Setup everything
 
 vendor: ## install repositories and vendors
 	docker-compose run --rm mlflow poetry install --remove-untracked
+	docker-compose run --rm fastapi poetry install --remove-untracked
 	# sudo chmod -R 777 .cache
 .PHONY: vendor
 
@@ -29,6 +30,12 @@ ps: ## docker-compose process status
 rm: ## stop and delete containers but leave network and volumes
 	docker-compose rm -f -v -s
 .PHONY: rm
+
+destroy: ## stop and delete containers and volumes
+	#docker-compose down -v --remove-orphans
+	$(MAKE) rm
+	docker volume rm mlflow-volume fastapi-volume
+.PHONY: destroy
 
 install: rm vendor up ## Do install
 .PHONY: install
